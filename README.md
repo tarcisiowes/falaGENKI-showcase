@@ -2,10 +2,8 @@
 
 A mobile-first Japanese learning app for Brazilian Portuguese speakers, designed around local-first study flows, approachable SRS review, and music-driven engagement.
 
-> This public repository is a product showcase. The production codebase is private.
-> This repo focuses on product direction, architecture summary, technical decisions, and delivery progress.
-
----
+> This public repository is a product showcase. The production codebase is private.  
+> This repo focuses on product direction, architecture, technical decisions, and delivery progress.
 
 ## Overview
 
@@ -22,8 +20,6 @@ The product combines:
 
 The current product direction is intentionally mobile-first. Web support exists as a future possibility, but it does not drive the core architecture.
 
----
-
 ## What makes it different
 
 - **Brazilian-first learning experience** instead of generic English-first UX
@@ -33,9 +29,7 @@ The current product direction is intentionally mobile-first. Web support exists 
 - **Guest-first progression** with optional account and sync boundaries
 - **Casual spoken Japanese direction** as a real curriculum concern, not only JLPT-style memorization
 
----
-
-## Core Product Areas
+## Product Areas
 
 - Guided lessons
 - Kana study and practice
@@ -45,32 +39,26 @@ The current product direction is intentionally mobile-first. Web support exists 
 - Progress, streak, XP, and study-plan support
 - Optional login, backup, and premium foundations
 
----
+## Demo Assets
 
-## Screenshots
+### Screenshots
+Screenshots will be added later.
 
-> Screenshots will be added later.
+Recommended file names:
 
-Suggested structure:
+- `assets/screenshots/home.png`
+- `assets/screenshots/learn.png`
+- `assets/screenshots/review.png`
+- `assets/screenshots/kana.png`
+- `assets/screenshots/music.png`
+- `assets/screenshots/profile.png`
 
-- `docs/screenshots/home.png`
-- `docs/screenshots/learn.png`
-- `docs/screenshots/review.png`
-- `docs/screenshots/kana.png`
-- `docs/screenshots/music.png`
-- `docs/screenshots/profile.png`
+### Navigation GIF
+A navigation GIF will be added later.
 
----
+Recommended file name:
 
-## Navigation GIF
-
-> A navigation GIF will be added later.
-
-Suggested placement:
-
-- `docs/gifs/falagenki-navigation.gif`
-
----
+- `assets/gifs/falagenki-navigation.gif`
 
 ## Simple Architecture Diagram
 
@@ -86,3 +74,27 @@ flowchart TD
     H --> I[Supabase Sync Layer]
     H --> J[RevenueCat Billing Foundation]
     A --> K[Storybook + CI + QA Workflow]
+```
+
+## Documentation
+
+- [Architecture Summary](docs/architecture.md)
+- [Technical Decisions](docs/technical-decisions.md)
+- [Roadmap](docs/roadmap.md)
+- [Changelog](docs/changelog.md)
+
+## Why this repository is public
+
+This repository exists to present the product direction, engineering thinking, and system design behind falaGENKI without exposing the private production codebase.
+
+It is intended to show:
+
+- product thinking
+- architecture choices
+- mobile-first system design
+- delivery progress
+- engineering depth behind the app
+
+## Contact
+
+If you are a recruiter, collaborator, or hiring manager and want to discuss the project, feel free to reach out through my GitHub or LinkedIn profile.
