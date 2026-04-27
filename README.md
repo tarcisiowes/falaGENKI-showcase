@@ -42,16 +42,62 @@ The current product direction is intentionally mobile-first. Web support exists 
 ## Demo Assets
 
 ### Screenshots
-Screenshots will be added later.
 
-Recommended file names:
+#### SplashScreens | App Icon
+<div align="center">
+  <img src="docs/screenshots/splash-background-light-with-logo.png" width="250">
+  <img src="docs/screenshots/splash-background-dark-with-logo.png" width="250">
+  <img src="docs/screenshots/app-icon.png" width="250">
+</div>
 
-- `assets/screenshots/home.png`
-- `assets/screenshots/learn.png`
-- `assets/screenshots/review.png`
-- `assets/screenshots/kana.png`
-- `assets/screenshots/music.png`
-- `assets/screenshots/profile.png`
+---
+
+#### Home
+<div align="center">
+  <img src="docs/screenshots/%5Bhome%5D-1.png" width="200">
+  <img src="docs/screenshots/%5Bhome%5D-2%20plano%20de%20estudos-1.png" width="200">
+</div>
+
+---
+
+#### Aprender
+<div align="center">
+  <img src="docs/screenshots/%5Baprender%5D-1.0.png" width="200">
+  <img src="docs/screenshots/%5Baprender%5D-1.1%20hiragana%20tabela.png" width="200">
+  <img src="docs/screenshots/%5Baprender%5D-2%20pratica.png" width="200">
+  <img src="docs/screenshots/%5Baprender%5D-2.1%20pratica.png" width="200">
+  <img src="docs/screenshots/%5Baprender%5D-2.2%20pratica.png" width="200">
+  <img src="docs/screenshots/%5Baprender%5D-3%20licao.png" width="200">
+  <img src="docs/screenshots/%5Baprender%5D-3.2%20gramatica.png" width="200">
+  <img src="docs/screenshots/%5Baprender%5D-3.2%20licao.png" width="200">
+</div>
+
+---
+
+#### Musica
+<div align="center">
+  <img src="docs/screenshots/%5Bmusica%5D-1.png" width="200">
+  <img src="docs/screenshots/%5Bmusica%5D-2%20aprendendo%20musica.png" width="200">
+  <img src="docs/screenshots/%5Bmusica%5D-3%20aprendendo%20musica.png" width="200">
+</div>
+
+---
+
+#### Cartas
+<div align="center">
+  <img src="docs/screenshots/%5Bcartas%5D-1.png" width="200">
+  <img src="docs/screenshots/%5Bcartas%5D-12.png" width="200">
+</div>
+
+---
+
+#### Perfil
+<div align="center">
+  <img src="docs/screenshots/%5Bperfil%5D-1.png" width="200">
+  <img src="docs/screenshots/%5Bperfil%5D-8.png" width="200">
+  <img src="docs/screenshots/%5Bperfil%5D-10.png" width="200">
+</div>
+
 
 ### Navigation GIF
 A navigation GIF will be added later.
