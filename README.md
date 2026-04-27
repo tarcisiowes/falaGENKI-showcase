@@ -60,7 +60,7 @@ The current product direction is intentionally mobile-first. Web support exists 
 
 ---
 
-#### Aprender
+#### Learn
 <div align="center">
   <img src="docs/screenshots/%5Baprender%5D-1.0.png" width="200">
   <img src="docs/screenshots/%5Baprender%5D-1.1%20hiragana%20tabela.png" width="200">
@@ -74,7 +74,7 @@ The current product direction is intentionally mobile-first. Web support exists 
 
 ---
 
-#### Musica
+#### Music
 <div align="center">
   <img src="docs/screenshots/%5Bmusica%5D-1.png" width="200">
   <img src="docs/screenshots/%5Bmusica%5D-2%20aprendendo%20musica.png" width="200">
@@ -83,7 +83,7 @@ The current product direction is intentionally mobile-first. Web support exists 
 
 ---
 
-#### Cartas
+#### Cards
 <div align="center">
   <img src="docs/screenshots/%5Bcartas%5D-1.png" width="200">
   <img src="docs/screenshots/%5Bcartas%5D-12.png" width="200">
@@ -91,7 +91,7 @@ The current product direction is intentionally mobile-first. Web support exists 
 
 ---
 
-#### Perfil
+#### Profile
 <div align="center">
   <img src="docs/screenshots/%5Bperfil%5D-1.png" width="200">
   <img src="docs/screenshots/%5Bperfil%5D-8.png" width="200">
