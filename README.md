@@ -1,25 +1,56 @@
-# falaGENKI
+# Modo Nihongo: Japonês
 
-**A mobile-first Japanese learning app built for Brazilian Portuguese speakers.**
+**A published iPhone app for Brazilian Portuguese speakers learning Japanese.**
 
-falaGENKI is an Expo + React Native product that turns early Japanese study into a local-first daily learning loop: guided kana and grammar paths, SRS review, Anki-compatible decks, and a City Pop listening mode where vocabulary can move from lyrics into review.
+Formerly known as falaGENKI, Modo Nihongo is an independently developed React Native and Expo application designed to make everyday Japanese study approachable through guided lessons, practice and spaced repetition.
 
-The project is still in active development, but it already demonstrates the kind of work expected from a production mobile codebase: typed domain models, local persistence, content validation, audio pipeline tooling, premium/account foundations, Storybook previews, and automated tests.
+[Download on the App Store](https://apps.apple.com/jp/app/modo-nihongo-japon%C3%AAs/id6812194613) · [Brazilian App Store](https://apps.apple.com/br/app/modo-nihongo-japon%C3%AAs/id6812194613)
 
-## Why This Project Stands Out
+**Status:** Released on the App Store for iPhone. The initial learning experience is currently free. Development and updates continue.
 
-| Product signal | Engineering signal |
+## Product
+
+- **Learn:** guided Japanese lessons with explanations in Brazilian Portuguese.
+- **Kana:** hiragana and katakana maps, character practice and audio examples.
+- **Practice:** vocabulary, listening, reading and sentence-building activities.
+- **Review:** a custom spaced-repetition system for regular study.
+- **Progress:** personalized study plan, reminders and progress saved on the device.
+- **Offline access:** study locally available content without requiring a network connection or account.
+- **Optional sign-in:** Sign in with Apple for study-plan settings backup.
+
+The live App Store listing is the reference for current features and screenshots.
+
+## Engineering
+
+| Product requirement | Engineering approach |
 | --- | --- |
-| Built for Brazilian learners, not translated from an English-first app | TypeScript-first Expo architecture with route, feature, repository, and domain boundaries |
-| Learning loop works without requiring an account | Local SQLite is the operational source of truth |
-| Kana, lessons, cards, reviews, and music are connected into one flow | Drizzle schema, repository layer, Zod content schemas, and focused feature modules |
-| City Pop is part of learning, not a decorative gimmick | Audio manifest, playback runtime, local cache, download queue, and QA tooling |
-| Anki import/export support gives the app a real learner migration path | Dedicated APKG parser/converter/exporter modules |
-| Launch concerns are represented early | Supabase, RevenueCat, account deletion, analytics consent, feedback, reminders, EAS, release docs |
+| Guided lessons and review | Typed domain models, feature modules and a dedicated SRS scheduler |
+| Study without an account | Local SQLite persistence with Drizzle ORM |
+| Structured learning content | Schema validation, reference checks and reusable content models |
+| Audio practice | Asset manifests, playback and local caching infrastructure |
+| Optional account services | Supabase integration and a separate account boundary |
+| Maintainable UI | Expo Router, reusable React Native components and semantic theme tokens |
+| Release and iteration | Automated validation, testing, device QA and App Store delivery |
 
-## Current Mobile UI
+## Tech Stack
 
-Captured on iPhone 17 Pro Simulator on May 17, 2026.
+| Layer | Tools |
+| --- | --- |
+| Mobile runtime | React Native, Expo |
+| Language & navigation | TypeScript, Expo Router |
+| Local data | SQLite, Drizzle ORM |
+| Backend integration | Supabase |
+| Audio | Expo audio and asset tooling |
+| Content validation | Zod |
+| Quality | Jest, React Native Testing Library, ESLint |
+
+The product source code is private. This repository is a public engineering showcase, not an installable source repository.
+
+## Development History
+
+The project started under the name **falaGENKI** before becoming Modo Nihongo: Japonês. Earlier experiments included music-assisted vocabulary study; the Japanese-learning app is now focused on its core study experience.
+
+The following screens are historical captures from May 17, 2026. They illustrate the earlier product and development process; they do not represent the current App Store interface. Music-related screens show an earlier experimental direction and are not presented as features of the current released app.
 
 <table>
   <tr>
@@ -36,183 +67,8 @@ Captured on iPhone 17 Pro Simulator on May 17, 2026.
   </tr>
 </table>
 
-## Product Experience
+## Delivery
 
-falaGENKI is designed as a study tool that feels native, calm, and useful from the first session.
+I designed and implemented the application independently, including the learning flows, data model, review logic, audio workflow, UI and release process. Publishing the app was a milestone in an ongoing product development cycle, with updates driven by testing and improvements to real learner workflows.
 
-- **Home:** shows the learner what matters now: study rhythm, XP, pending review, and shortcuts into the next useful action.
-- **Learn:** separates foundational paths instead of dumping every activity into a single feed.
-- **Kana:** combines map-based navigation, visual detail, audio playback, mnemonic support, and vocabulary examples.
-- **Music:** uses an original City Pop-style demo track as a real learning surface, with line progression and vocabulary review hooks.
-- **Cards:** groups review material by source: hiragana, learn/speak, katakana, music, and custom/Anki decks.
-- **Settings and account surfaces:** keep the product anonymous-first while leaving room for cloud sync, premium, account management, reminders, and preferences.
-
-All user-facing copy is written in Brazilian Portuguese. Technical docs, code, comments, and file names stay in English.
-
-## Feature Coverage
-
-| Area | Current implementation |
-| --- | --- |
-| App shell | Expo Router tabs, dynamic routes, stack routes, floating tab bar, top bars, deep-link metadata |
-| Home | XP, streak/study rhythm, review shortcuts, next-step routing, local progress summaries |
-| Learn | Hiragana, katakana, N5-style lesson modules, lesson progress, first-use guidance |
-| Kana | Catalogues, detail pages, practice flow, romaji assist, stroke order support, local mastery tracking |
-| Review | SRS queue, answer reveal, rating composer, audio-aware cards, review log persistence |
-| Decks | Built-in decks, user decks, grouped catalogue, card media support, Anki import/export foundation |
-| Music | City Pop catalogue, lyric segments, playback runtime, vocabulary extraction, save-to-review flow |
-| Audio | Bundled starter audio, manifest repository, remote URL resolution, local cache, download queue |
-| Auth and sync | Anonymous-first app state, Supabase auth boundary, study-plan sync snapshot foundation |
-| Premium | RevenueCat provider, paywall, entitlement rules, premium source adapters, cached pack foundation |
-| Feedback | Floating feedback entry, auth gate, image attachment metadata, Supabase-facing submit path |
-| Analytics | Consent-gated local queue, typed event taxonomy, Supabase analytics transport |
-| Release prep | EAS profiles, legal drafts, Supabase setup docs, RevenueCat setup docs, MVP closure checklist |
-
-## Architecture Overview
-
-The codebase is organized to keep UI, domain rules, local persistence, remote services, and content authoring concerns separated.
-
-```mermaid
-flowchart TD
-  Routes["app/ Expo Router routes"] --> Providers["AppProviders"]
-  Providers --> Theme["Semantic theme system"]
-  Providers --> Auth["AuthProvider"]
-  Providers --> Billing["RevenueCatProvider"]
-
-  Routes --> Screens["Screens and feature screens"]
-  Screens --> Components["Reusable UI components"]
-  Screens --> FeatureLogic["Feature-local logic modules"]
-
-  FeatureLogic --> Repositories["SQLite repositories"]
-  Repositories --> LocalDB["expo-sqlite + Drizzle schema"]
-
-  FeatureLogic --> Content["Bundled content + Zod schemas"]
-  FeatureLogic --> SRS["SRS scheduler"]
-  FeatureLogic --> Anki["APKG parser/exporter"]
-  FeatureLogic --> Audio["Audio playback/cache/download services"]
-
-  Auth --> Supabase["Supabase auth, sync, feedback, analytics"]
-  Billing --> Premium["Premium access and remote content adapters"]
-  Audio --> Storage["Bundled assets + Supabase Storage paths"]
-```
-
-## Repository Shape
-
-```text
-app/                  Expo Router tabs, stacks, dynamic routes
-src/components/       Shared UI primitives, each in its own folder
-src/features/         Product modules: learn, review, kana, citypop, decks, auth, premium, sync, audio
-src/screens/          Route-level screen composition
-src/content/          JSON learning data, source adapters, Zod schemas, provenance rules
-src/db/               SQLite client, Drizzle schema, migrations, repositories, hooks, seed logic
-src/srs/              Spaced repetition algorithm, scheduler, immediate recall, session logic
-src/anki/             APKG parsing, conversion, export, media handling
-src/theme/            Semantic tokens, theme factory/resolver, persisted theme mode
-src/navigation/       Floating tab bar, top bars, deep links, shell metadata
-src/storybook/        Component and product previews for design review
-supabase/             SQL migrations and Edge Functions for backend-facing launch work
-docs/                 Architecture, UX, audio, backend, legal, release, and handoff docs
-```
-
-## Local Data Model
-
-falaGENKI uses local SQLite as the primary runtime store. The user can study, review, and keep progress without logging in.
-
-| Table | Responsibility |
-| --- | --- |
-| `decks` / `cards` | Built-in, personal, music, and imported review material |
-| `srs_reviews` | Due dates, intervals, ease factor, repetitions, lapses, review state |
-| `review_log` | Historical review ratings and scheduling outcomes |
-| `lesson_progress` | Completed lessons, answer counts, unlocked card counts |
-| `kana_progress` | Per-kana mastery, attempts, due dates, pending review kinds |
-| `kana_romaji_assist` | Temporary assist state for early kana study |
-| `user_progress` | XP, streaks, level, daily goal, serialized user settings |
-| `audio_assets` | Audio id/group, storage path, local URI, checksum, status, playback metadata |
-| `app_meta` | App metadata and migration support |
-
-## Bundled Learning Content
-
-The content layer is schema-validated and reference-checked. It models grammar, examples, kana, lessons, lyrics, review cards, audio references, provenance, orthography policy, and terminology rules.
-
-| Content type | Current count |
-| --- | ---: |
-| Lesson definitions | 27 |
-| Hiragana records | 104 |
-| Katakana records | 104 |
-| Example sentences | 854 |
-| Grammar notes | 17 |
-| City Pop tracks | 3 |
-| Lyric segments | 36 |
-| Casual sentence bank groups | 4 |
-
-## Tech Stack
-
-| Layer | Tools |
-| --- | --- |
-| Mobile runtime | Expo SDK 55, React 19, React Native 0.83 |
-| Navigation | Expo Router, React Native Screens, Gesture Handler |
-| Language | TypeScript |
-| State | Zustand, React Query where remote state is needed |
-| Local persistence | expo-sqlite, Drizzle ORM |
-| Backend foundation | Supabase JS, Supabase migrations, Supabase Edge Functions |
-| Billing | RevenueCat |
-| Audio/media | expo-audio, expo-asset, expo-file-system |
-| Visual system | semantic theme tokens, expo-blur, expo-glass-effect, SVG, Skia |
-| Content contracts | Zod |
-| Anki support | JSZip and custom APKG parser/exporter |
-| Quality | Jest, React Native Testing Library, ESLint, Madge, JSCPD, ts-prune, depcheck |
-| Design review | Storybook web and native |
-
-## Quality And Delivery Practices
-
-This repository is structured like a product that is expected to survive iteration.
-
-- **Typed contracts:** TypeScript across app logic and Zod for learning content/runtime payloads.
-- **Feature boundaries:** screens compose feature logic instead of reaching directly into persistence or transport.
-- **Local-first reliability:** critical study behavior stays available without account or network.
-- **Validation scripts:** separate checks for content, kana data, N5 content, and audio manifests.
-- **Storybook workflow:** component primitives and product compositions can be reviewed outside the full app.
-- **Release hygiene:** EAS profiles, launch docs, legal drafts, account deletion function, Supabase setup, and RevenueCat setup are tracked.
-- **Architecture guardrails:** file-size checks, cycle checks, duplication checks, dead-code/dependency tooling.
-
-Useful validation commands:
-
-```bash
-npm run typecheck
-npm run lint
-npm run test -- --watch=false
-npm run validate:content
-npm run validate:audio
-npm run check:quality
-```
-
-## Current Status
-
-Implemented foundations:
-
-- Routed native mobile shell with tab and stack navigation
-- Local SQLite persistence and repository-backed app data
-- Guided kana and lesson surfaces
-- SRS review flow and review scheduler
-- Deck catalogue and Anki-compatible import/export foundation
-- City Pop listening mode with lyric progression and vocabulary review hooks
-- Audio manifest, playback, cache, and download infrastructure
-- Anonymous-first auth boundary, Supabase sync/feedback/analytics foundations
-- RevenueCat billing and premium-access foundations
-- Storybook previews and automated tests across core modules
-
-Still in progress:
-
-- Production Supabase deployment/secrets and end-to-end cloud validation
-- Real RevenueCat store products and purchase/restore validation
-- Premium content pack publishing and trusted entitlement mirroring
-- Full Android/iOS release smoke pass
-- Device-level accessibility pass
-- Ongoing lesson quality and content expansion
-
-## Recruiter Notes
-
-This project is a good snapshot of mobile product engineering beyond screen assembly.
-
-It shows product judgment, mobile UI implementation, domain modeling, offline-first data design, content tooling, audio workflow design, billing/backend preparation, test discipline, and release-readiness thinking in one coherent app.
-
-The visible product is a Japanese learning app. The deeper engineering story is a maintainable mobile system built around real learner workflows, not a static demo.
+[Developer profile](https://github.com/tarcisiowes)
